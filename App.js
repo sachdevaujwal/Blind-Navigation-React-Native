@@ -28,6 +28,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import GetButton from './components/database/Database';
+
 
 
 export default class App extends Component {
@@ -377,6 +379,8 @@ export default class App extends Component {
           <Text style={styles.submitButtonText}> Submit </Text>
         </TouchableOpacity>
         <Text style = {styles.textstyle}>{this.state.path}</Text>
+
+        <GetButton/>
       </View>
     )
 
