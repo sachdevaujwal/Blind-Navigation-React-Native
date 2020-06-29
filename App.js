@@ -138,18 +138,27 @@ export default class App extends Component {
       }
 
       let temp = [];
-      let steps =1 ;
+      let steps = 1;
       for (var j = 0; j < direction.length; j++) {
 
-          if (direction[j]==direction[j+1]){
-            steps ++;
-          }else{
-            temp.push(<Text style={styles.inditext}>{direction[j] + ` ${steps} Step(s) `}</Text>);
-            steps =1;
-          }  
-      
+        if (direction[j] == direction[j + 1]) {
+          steps++;
+        } else {
+          temp.push(direction[j] + ` ${steps} Step(s) `);
+          steps = 1;
+        }
+
         // console.log (temp);
+
       }
+     
+    
+      var myobj={
+        "direction":temp,
+      };
+
+      // let obj = JSON.parse( `{ "Path":"${temp[1]}"}`);
+      console.log(myobj);
 
       // for (var j = 0; j < direction.length; j++) {
       //   var steps = 0;
@@ -209,7 +218,7 @@ export default class App extends Component {
 
       // console.log(path);
       this.setState({ path: temp });
-      console.log (this.state.path);
+      console.log(this.state.path);
 
     }
     // console.log (newpath);
@@ -221,132 +230,132 @@ export default class App extends Component {
   };
 
   handleStart = (text) => {
-    if (text=="W1"){
+    if (text == "W1") {
       text = 242;
     }
 
-    else if (text=="G1"){
+    else if (text == "G1") {
       text = 246;
     }
 
-    else if (text=="R1"){
+    else if (text == "R1") {
       text = 182;
     }
 
-    else if (text=="I1"){
+    else if (text == "I1") {
       text = 186;
     }
 
-    else if (text=="S1"){
+    else if (text == "S1") {
       text = 189;
     }
 
-    else if (text=="I2"){
+    else if (text == "I2") {
       text = 190;
     }
 
-    else if (text=="G2"){
+    else if (text == "G2") {
       text = 250;
     }
 
-    else if (text=="C1"){
+    else if (text == "C1") {
       text = 146;
     }
-    else if (text=="C2"){
+    else if (text == "C2") {
       text = 106;
     }
 
-    else if (text=="S2"){
+    else if (text == "S2") {
       text = 148;
     }
 
-    else if (text=="S3"){
+    else if (text == "S3") {
       text = 149;
     }
 
-    else if (text=="S4"){
+    else if (text == "S4") {
       text = 150;
     }
 
-    else if (text=="M1"){
+    else if (text == "M1") {
       text = 107;
     }
 
-    else if (text=="M2"){
+    else if (text == "M2") {
       text = 108;
     }
 
-    else if (text=="M3"){
+    else if (text == "M3") {
       text = 109;
     }
 
-    else if (text=="F1"){
+    else if (text == "F1") {
       text = 110;
     }
 
     this.setState({ startNode: text })
   }
   handleEnd = (text) => {
-    if (text=="W1"){
+    if (text == "W1") {
       text = 242;
     }
 
-    else if (text=="G1"){
+    else if (text == "G1") {
       text = 246;
     }
 
-    else if (text=="R1"){
+    else if (text == "R1") {
       text = 182;
     }
 
-    else if (text=="I1"){
+    else if (text == "I1") {
       text = 186;
     }
 
-    else if (text=="S1"){
+    else if (text == "S1") {
       text = 189;
     }
 
-    else if (text=="I2"){
+    else if (text == "I2") {
       text = 190;
     }
 
-    else if (text=="G2"){
+    else if (text == "G2") {
       text = 250;
     }
 
-    else if (text=="C1"){
+    else if (text == "C1") {
       text = 146;
     }
-    else if (text=="C2"){
+    else if (text == "C2") {
       text = 106;
     }
 
-    else if (text=="S2"){
+    else if (text == "S2") {
       text = 148;
     }
 
-    else if (text=="S3"){
+    else if (text == "S3") {
       text = 149;
     }
 
-    else if (text=="S4"){
+    else if (text == "S4") {
       text = 150;
     }
 
-    else if (text=="M1"){
+    else if (text == "M1") {
       text = 107;
     }
 
-    else if (text=="M2"){
+    else if (text == "M2") {
       text = 108;
     }
 
-    else if (text=="M3"){
+    else if (text == "M3") {
       text = 109;
     }
 
-    else if (text=="F1"){
+    else if (text == "F1") {
       text = 110;
     }
 
@@ -378,9 +387,9 @@ export default class App extends Component {
           }>
           <Text style={styles.submitButtonText}> Submit </Text>
         </TouchableOpacity>
-        <Text style = {styles.textstyle}>{this.state.path}</Text>
+        <Text style={styles.textstyle}>{this.state.path}</Text>
 
-        <GetButton/>
+        <GetButton />
       </View>
     )
 
